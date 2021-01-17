@@ -1,6 +1,7 @@
 package com.multipledb.demo.dbtest1;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "data")
@@ -20,7 +21,7 @@ public class Data {
     private String location;
 
     @Basic(optional = true)
-    private String dob;
+    private Date dob;
 
     public int getId() {
         return id;
@@ -54,19 +55,22 @@ public class Data {
         this.location = location;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
-    public Data(String name, String dept, String location, String dob) {
+    public Data(String name, String dept, String location, Date dob) {
         this.name = name;
         this.dept = dept;
         this.location = location;
         this.dob = dob;
+    }
+
+    public Data() {
     }
 
     @Override
